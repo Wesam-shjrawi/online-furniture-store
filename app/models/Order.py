@@ -4,11 +4,7 @@ class Order:
         self.total_amount = total_amount
         self.status = status
 
-    def add_order(self):
-        query = """
-        INSERT INTO Orders (UserID, TotalAmount, Status, CreatedAt)
-        VALUES (?, ?, ?, GETDATE())
-        """
+    
         execute_query(query, (self.user_id, self.total_amount, self.status))
         print(f"تمت إضافة الطلب بنجاح.")
 
